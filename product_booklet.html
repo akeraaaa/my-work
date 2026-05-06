@@ -99,3 +99,152 @@ body{
 }
 .cover-cta:hover{background:var(--gold);color:var(--ink);}
 .cover-cta::after{content:'→';font-size:16px;}
+  .cover-right{
+  position:relative;
+  overflow:hidden;
+}
+.cover-right::before{
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,#1a1208 0%,#2d1f0a 50%,#0e0b08 100%);
+  z-index:1;
+}
+.cover-pattern{
+  position:absolute;inset:0;
+  z-index:2;
+  opacity:0.15;
+  background-image:
+    repeating-linear-gradient(45deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 50%);
+  background-size:20px 20px;
+}
+.cover-product-number{
+  position:absolute;
+  bottom:60px;right:60px;
+  z-index:3;
+  font-family:'Playfair Display',serif;
+  font-size:160px;
+  font-weight:900;
+  color:rgba(184,146,42,0.08);
+  line-height:1;
+  user-select:none;
+}
+.cover-badge{
+  position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  z-index:3;
+  width:220px;height:220px;
+  border:1px solid rgba(184,146,42,0.3);
+  border-radius:50%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+}
+.cover-badge::before{
+  content:'';
+  position:absolute;inset:10px;
+  border:1px solid rgba(184,146,42,0.15);
+  border-radius:50%;
+}
+.cover-badge-year{
+  font-size:11px;letter-spacing:0.3em;
+  text-transform:uppercase;color:var(--gold);
+}
+.cover-badge-name{
+  font-family:'Playfair Display',serif;
+  font-size:28px;font-weight:700;
+  color:var(--cream);
+  text-align:center;line-height:1.1;
+}
+.cover-badge-sub{
+  font-size:10px;letter-spacing:0.2em;
+  text-transform:uppercase;color:#8a7a68;
+}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:var(--cream);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;
+  justify-content:space-between;
+  padding:0 60px;
+  height:64px;
+}
+.nav-logo{
+  font-family:'Playfair Display',serif;
+  font-size:22px;font-weight:700;
+  letter-spacing:0.05em;
+  color:var(--ink);
+}
+.nav-logo span{color:var(--gold);}
+.nav-links{
+  display:flex;gap:36px;
+  list-style:none;
+}
+.nav-links a{
+  font-size:11px;letter-spacing:0.15em;
+  text-transform:uppercase;font-weight:400;
+  color:var(--muted);text-decoration:none;
+  transition:color 0.2s;
+}
+.nav-links a:hover{color:var(--gold);}
+
+/* ── SECTION COMMON ── */
+section{padding:100px 60px;}
+.section-label{
+  font-size:10px;letter-spacing:0.35em;
+  text-transform:uppercase;
+  color:var(--gold);font-weight:500;
+  margin-bottom:16px;
+  display:flex;align-items:center;gap:12px;
+}
+.section-label::before{
+  content:'';display:block;
+  width:30px;height:1px;background:var(--gold);
+}
+.section-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(32px,4vw,52px);
+  font-weight:700;line-height:1.1;
+  color:var(--ink);
+  margin-bottom:20px;
+}
+.section-title em{font-style:italic;color:var(--gold);}
+
+/* ── FEATURED PRODUCTS ── */
+.featured{background:var(--cream);}
+.featured-intro{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:60px;align-items:end;
+  margin-bottom:72px;
+}
+.featured-intro-right p{
+  font-size:15px;font-weight:300;
+  line-height:1.9;color:var(--muted);
+}
+.products-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2px;
+}
+.product-card{
+  background:var(--warm);
+  position:relative;overflow:hidden;
+  cursor:pointer;
+  transition:transform 0.3s;
+}
+.product-card:hover{transform:translateY(-4px);}
+.product-card:hover .product-img-overlay{opacity:1;}
+.product-card:first-child{
+  grid-column:span 2;
+  grid-row:span 1;
+}
+.product-img{
+  width:100%;
+  aspect-ratio:1;
+  object-fit:cover;
+  display:block;
+}
