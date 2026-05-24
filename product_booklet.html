@@ -185,24 +185,43 @@ body{
   
 }
 .cover-cta:hover{background:var(--gold);color:var(--ink);}
+  
 .cover-cta::after{content:'→';font-size:16px;}
+  
   .cover-right{
+    
   position:relative;
+    
   overflow:hidden;
+    
 }
+  
 .cover-right::before{
+  
   content:'';
+  
   position:absolute;inset:0;
+  
   background:linear-gradient(135deg,#1a1208 0%,#2d1f0a 50%,#0e0b08 100%);
+  
   z-index:1;
+  
 }
+  
 .cover-pattern{
+  
   position:absolute;inset:0;
+  
   z-index:2;
+  
   opacity:0.15;
+  
   background-image:
+    
     repeating-linear-gradient(45deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 50%);
+  
   background-size:20px 20px;
+  
 }
 .cover-product-number{
   position:absolute;
