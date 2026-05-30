@@ -341,132 +341,252 @@ class _Header extends StatelessWidget {
               borderRadius: BorderRadius.circular(14),
               
             ),
+            
             child: const Center(
+              
               child: Text('AJ',
-                  style: TextStyle(color: Colors.white,
+                          
+                  style: TextStyle(color: 
+                                   Colors.white,
                       fontWeight: FontWeight.w700, fontSize: 15)),
+              
             ),
+            
           ),
+          
         ],
+        
       ),
+      
     );
+    
   }
+  
 }
 
 // ─── RING CARD ───────────────────────────────────────────────────────────────
-class _RingCard extends StatelessWidget {
-  final Animation<double> anim;
-  const _RingCard({required this.anim});
 
+class _RingCard extends StatelessWidget {
+  
+  final Animation<double> anim;
+  
+  const _RingCard({required this.anim});
+  
+
+  
   @override
+  
   Widget build(BuildContext context) {
+    
     return Container(
+      
       padding: const EdgeInsets.all(24),
+      
       decoration: BoxDecoration(
+        
         gradient: const LinearGradient(
+          
           colors: [Color(0xFF1E1B4B), Color(0xFF1A1A2E)],
+          
           begin: Alignment.topLeft, end: Alignment.bottomRight,
+          
         ),
+        
         borderRadius: BorderRadius.circular(28),
+        
         border: Border.all(color: kPurple.withOpacity(0.2), width: 1),
+        
       ),
+      
       child: Row(
+        
         children: [
+          
           // Activity rings
+          
           SizedBox(
+            
             width: 130, height: 130,
+            
             child: AnimatedBuilder(
+              
               animation: anim,
+              
               builder: (_, __) => CustomPaint(
+                
                 painter: _RingsPainter(progress: anim.value),
+                
               ),
+              
             ),
+            
           ),
+          
           const SizedBox(width: 28),
+          
           Expanded(
+            
             child: Column(
+              
               crossAxisAlignment: CrossAxisAlignment.start,
+              
               children: [
+                
                 Text("Daily Goal", style: TextStyle(
+                  
                     color: kMuted, fontSize: 12, letterSpacing: 0.4)),
+                
                 const SizedBox(height: 6),
+                
                 Text("78%", style: TextStyle(
+                  
                     color: kText, fontSize: 36,
+
+                  
                     fontWeight: FontWeight.w800, height: 1)),
+                
                 Text("Completed", style: TextStyle(
+                  
                     color: kMuted, fontSize: 12)),
+                
                 const SizedBox(height: 20),
+                
                 _RingLegend(color: kGreen,  label: "Move",     value: "480 cal"),
+                
                 const SizedBox(height: 8),
+                
                 _RingLegend(color: kBlue,   label: "Exercise", value: "34 min"),
+                
                 const SizedBox(height: 8),
+                
                 _RingLegend(color: kOrange, label: "Stand",    value: "10 hrs"),
+                
               ],
+              
             ),
+            
           ),
+          
         ],
+        
       ),
+      
     );
+    
   }
+  
 }
 
+
 class _RingLegend extends StatelessWidget {
+  
   final Color color; final String label, value;
+  
   const _RingLegend({required this.color, required this.label, required this.value});
+  
 
   @override
+  
   Widget build(BuildContext context) {
+    
     return Row(
+      
       children: [
+        
         Container(width: 10, height: 10,
+                  
             decoration: BoxDecoration(color: color, shape: BoxShape.circle)),
+        
         const SizedBox(width: 8),
+        
         Text(label, style: TextStyle(color: kMuted, fontSize: 12)),
+        
         const Spacer(),
+        
         Text(value, style: TextStyle(color: kText, fontSize: 12,
+                                     
             fontWeight: FontWeight.w600)),
+        
       ],
+      
     );
+    
   }
+  
 }
 
 class _RingsPainter extends CustomPainter {
+
+
+  
   final double progress;
+  
   const _RingsPainter({required this.progress});
+  
 
   void _ring(Canvas c, Offset center, double r, Color col,
+             
       double pct, double stroke) {
+    
     final bg = Paint()
+      
       ..color = col.withOpacity(0.15)
+      
       ..strokeWidth = stroke
+      
       ..style = PaintingStyle.stroke
+      
       ..strokeCap = StrokeCap.round;
+    
     final fg = Paint()
+      
       ..color = col
+      
       ..strokeWidth = stroke
+      
       ..style = PaintingStyle.stroke
+      
       ..strokeCap = StrokeCap.round
+      
       ..shader = SweepGradient(
+      
         startAngle: -math.pi / 2,
+      
         endAngle:   -math.pi / 2 + 2 * math.pi,
+      
         colors: [col.withOpacity(0.6), col],
+      
       ).createShader(Rect.fromCircle(center: center, radius: r));
+    
 
     c.drawCircle(center, r, bg);
+    
     c.drawArc(
+      
       Rect.fromCircle(center: center, radius: r),
+      
       -math.pi / 2,
+      
       2 * math.pi * pct * progress,
+      
       false, fg,
+      
     );
+    
   }
 
   @override
+  
   void paint(Canvas c, Size s) {
+    
     final center = Offset(s.width / 2, s.height / 2);
+    
     _ring(c, center, 60, kGreen,  0.80, 12);
+    
     _ring(c, center, 44, kBlue,   0.57, 12);
+    
     _ring(c, center, 28, kOrange, 0.71, 12);
+    
 
     // Center text
     final tp = TextPainter(
