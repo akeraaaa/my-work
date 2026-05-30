@@ -94,75 +94,142 @@ const kMuted     = Color(0xFF7A7A9A);
 
 
 // ─── HOME SCREEN ────────────────────────────────────────────────────────────
+
 class HomeScreen extends StatefulWidget {
+  
   const HomeScreen({super.key});
+  
   @override
+  
   State<HomeScreen> createState() => _HomeScreenState();
+  
 }
 
+
 class _HomeScreenState extends State<HomeScreen>
+  
     with TickerProviderStateMixin {
+  
   int _navIndex = 0;
+  
 
   late AnimationController _ringCtrl;
+  
   late Animation<double>   _ringAnim;
+  
 
   @override
+  
   void initState() {
+    
     super.initState();
+    
     _ringCtrl = AnimationController(
+      
       vsync: this,
+      
       duration: const Duration(milliseconds: 1400),
+      
     )..forward();
+    
     _ringAnim = CurvedAnimation(parent: _ringCtrl, curve: Curves.easeOutCubic);
+    
   }
+  
 
   @override
+  
   void dispose() {
+    
     _ringCtrl.dispose();
+    
     super.dispose();
+    
   }
+  
 
   @override
+  
   Widget build(BuildContext context) {
+    
     return Scaffold(
+      
       backgroundColor: kBg,
+      
       extendBody: true,
+      
       body: SafeArea(
+        
         bottom: false,
+
+        
         child: SingleChildScrollView(
+          
           padding: const EdgeInsets.only(bottom: 100),
+          
           child: Column(
+            
             crossAxisAlignment: CrossAxisAlignment.start,
+            
             children: [
+              
               _Header(),
+              
               const SizedBox(height: 24),
+              
               _SectionPad(child: _RingCard(anim: _ringAnim)),
+              
               const SizedBox(height: 24),
+              
               _SectionPad(child: _QuickStats()),
+              
               const SizedBox(height: 24),
+              
               _SectionHeader(title: "Today's Workouts", action: "See all"),
+              
               const SizedBox(height: 12),
+              
               _WorkoutList(),
+              
               const SizedBox(height: 24),
+
+              
               _SectionHeader(title: "Weekly Progress", action: "Details"),
+              
               const SizedBox(height: 12),
+              
               _SectionPad(child: _WeeklyChart()),
+              
               const SizedBox(height: 24),
+              
               _SectionHeader(title: "Challenges", action: "View all"),
+              
               const SizedBox(height: 12),
+              
               _ChallengesRow(),
+              
               const SizedBox(height: 8),
+              
             ],
+            
           ),
+          
         ),
+        
       ),
+      
       bottomNavigationBar: _BottomNav(
+        
         index: _navIndex,
+        
         onTap: (i) => setState(() => _navIndex = i),
+        
       ),
+      
     );
+    
   }
+  
 }
 
 // ─── HEADER ─────────────────────────────────────────────────────────────────
