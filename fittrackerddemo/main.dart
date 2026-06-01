@@ -654,20 +654,36 @@ class _StatCard extends StatelessWidget {
         border: Border.all(color: data.color.withOpacity(0.15)),
       ),
       child: Column(
+        
         crossAxisAlignment: CrossAxisAlignment.start,
+
+        
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        
         children: [
+          
           Row(children: [
+            
             Text(data.icon, style: const TextStyle(fontSize: 20)),
+            
             const Spacer(),
+            
             Container(
+              
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+              
               decoration: BoxDecoration(
+                
                 color: data.color.withOpacity(0.15),
+                
                 borderRadius: BorderRadius.circular(20),
+                
               ),
+              
               child: Text(data.sub,
+                          
                   style: TextStyle(color: data.color, fontSize: 10,
+                                   
                       fontWeight: FontWeight.w600)),
             ),
           ]),
