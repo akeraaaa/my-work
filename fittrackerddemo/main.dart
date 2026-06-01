@@ -604,12 +604,19 @@ class _RingsPainter extends CustomPainter {
 }
 
 // ─── QUICK STATS ─────────────────────────────────────────────────────────────
+
 class _QuickStats extends StatelessWidget {
+  
   final stats = const [
+    
     _StatData("👣", "Steps",    "8,420",  "+12%",  kPurple),
+    
     _StatData("🔥", "Calories", "480",    "+5%",   kPink),
+    
     _StatData("💧", "Water",    "1.8L",   "Goal 2L",kBlue),
+    
     _StatData("😴", "Sleep",    "7h 20m", "Good",  kGreen),
+    
   ];
 
   const _QuickStats();
