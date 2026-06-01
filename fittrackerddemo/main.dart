@@ -645,15 +645,28 @@ class _StatCard extends StatelessWidget {
   const _StatCard({required this.data});
 
   @override
+  
   Widget build(BuildContext context) {
+    
     return Container(
+
+      
       padding: const EdgeInsets.all(16),
+      
       decoration: BoxDecoration(
+        
         color: kCard,
+        
         borderRadius: BorderRadius.circular(20),
+        
         border: Border.all(color: data.color.withOpacity(0.15)),
+        
       ),
+
+
+      
       child: Column(
+        
         
         crossAxisAlignment: CrossAxisAlignment.start,
 
