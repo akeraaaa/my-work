@@ -629,12 +629,18 @@ class _QuickStats extends StatelessWidget {
 }
 
 class _StatData {
+  
   final String icon, label, value, sub;
+  
   final Color  color;
+  
   const _StatData(this.icon, this.label, this.value, this.sub, this.color);
+  
 }
 
+
 class _StatCard extends StatelessWidget {
+  
   final _StatData data;
   const _StatCard({required this.data});
 
