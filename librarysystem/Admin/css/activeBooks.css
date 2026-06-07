@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  /* font-family: "Roboto", sans-serif; */
+  font-family: "Montserrat", sans-serif;
+}
+.container {
+  display: flex;
+  background-color: #343a40;
+  color: #fff;
+  min-height: 100vh;
+  max-height: auto;
+}
+.activeBookTable {
+  padding: 20px;
+}
+.activeBookTable h1 {
+  margin-bottom: 30px;
+  border-bottom: 1px solid;
+  width: max-content;
+}
+
+.search-container {
+  align-items: center;
+  width: 400px;
+  margin: auto;
+  border-radius: 100px;
+  background-color: #fff;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+.search-container form {
+  width: 100%;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+#search-input {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+#search-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-right: 20px;
+  align-self: center;
+}
+
+.activeBookTable table {
+  border-width: 2px;
+}
+.activeBookTable th,
+td {
+  padding: 15px;
+  min-width: 90px;
+}
+#image {
+  height: 150px;
+  width: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 0 2px 3px black;
+}
+.returnBtn form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.returnBtn form button {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  transition: 0.3s ease-in-out;
+}
+.returnBtn form button:hover {
+  color: white;
+  background-color: black;
+}
+#mainTable, #searchTable{
+  margin: 20px;
+}
