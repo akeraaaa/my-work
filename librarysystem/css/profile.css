@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  /* font-family: "Roboto"; */
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background: linear-gradient(45deg, #3c3d37, #4a4b44);
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-container {
+  max-width: 800px;
+  margin: 120px auto 30px auto;
+
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  padding: 2rem;
+}
+
+/* Header Section */
+.profile-header {
+  text-align: center;
+  background: linear-gradient(45deg, #6256ca, #92908c);
+  color: white;
+  padding: 2rem;
+  border-radius: 20px;
+  position: relative;
+}
+
+.profile-name {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.profile-role {
+  font-size: 1.2rem;
+  margin: 0.5rem 0 0;
+}
+
+/* Account Details */
+.profile-info {
+  padding: 2rem;
+}
+
+.profile-info h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  border-bottom: 2px solid #6256ca;
+  display: inline-block;
+}
+
+.profile-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.profile-info li {
+  margin: 1rem 0;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+/* Activity Overview */
+.activity-overview {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.activity-overview h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.activity-stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.stat {
+  background: rgba(24, 28, 20, 0.9);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 20px;
+  flex: 1;
+  transition: transform 0.3s ease;
+}
+
+.stat:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.stat h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 2rem;
+}
+
+.stat p {
+  margin: 0.5rem 0 0;
+}
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 1rem;
+  }
+
+  .profile-header {
+    padding: 1.5rem;
+  }
+
+  .profile-picture {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-info {
+    padding: 1.5rem;
+  }
+
+  .activity-overview {
+    padding: 1.5rem;
+  }
+
+  .activity-stats {
+    flex-direction: column;
+  }
+}
