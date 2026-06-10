@@ -62,39 +62,61 @@
         </div>
         
         <h2>Welcome to Our Library!</h2>
+        
         <p>
+          
           We are a hub of knowledge, education, and culture that serves our
           community by providing access to an extensive collection of books,
           resources, and services. Our mission is to foster lifelong learning,
           support research, and offer a space for inspiration and creativity.
+          
         </p>
+        
 
         <h2>Our Mission</h2>
+        
         <p>
+          
           Our mission is to provide free and equal access to knowledge and
           information for all. We believe in the power of books and education to
           change lives, and we are committed to creating an inclusive and
           welcoming space for everyone in our community.
         </p>
+        
 
         <h2>What We Offer</h2>
+        
         <ul>
+          
           <li>
+            
             Extensive Collection: Over 10,000 books, magazines, and digital
+            
             resources.
+            
           </li>
+          
           <li>
+            
             Children's Section: A vibrant area dedicated to young readers with a
             vast collection of books and activities.
+            
           </li>
+          
           <li>
+            
             Study and Research Areas: Comfortable spaces for study, research,
             and group discussions.
+            
           </li>
+          
           <li>
+            
             Workshops & Events: Regular workshops, storytelling sessions, author
             talks, and more.
+            
           </li>
+          
         </ul>
 
         <h2>Meet Our Team</h2>
