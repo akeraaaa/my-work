@@ -1,34 +1,66 @@
 <!DOCTYPE html>
+
 <html lang="en">
+  
   <head>
+
+    
     <meta charset="UTF-8" />
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <title>About Us - Our Library</title>
+    
     <link rel="stylesheet" href="about.css" />
+    
     <!-- link for icon -->
+    
     <link
+      
       rel="stylesheet"
+      
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      
     />
+    
     <!-- link for font -->
+    
     <link
+      
       href="https://fonts.googleapis.com/css2?family=Roboto&family=Playfair+Display&family=Poppins&display=swap"
+      
       rel="stylesheet"
+
+      
     />
+    
     <link rel="stylesheet" href="css/about.css" />
+    
   </head>
+  
 
   <body>
+    
     <!-- Navigation Bar -->
+    
       <?php include('navigation.php'); ?>
+
     <!-- End of navigation bar -->
+    
     <div class="container">
       
       <!-- About Us Section -->
+      
       <div class="about-us">
+        
         <div class="heading">
+
+
+          
           <h1>About Us</h1>
+          
         </div>
+        
         <h2>Welcome to Our Library!</h2>
         <p>
           We are a hub of knowledge, education, and culture that serves our
