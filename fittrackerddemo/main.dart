@@ -732,45 +732,81 @@ class _StatCard extends StatelessWidget {
                                    
                       fontWeight: FontWeight.w600)),
             ),
+            
           ]),
+          
           Column(
+            
             crossAxisAlignment: CrossAxisAlignment.start,
+            
             children: [
+              
               Text(data.value,
+                   
                   style: const TextStyle(color: kText, fontSize: 20,
+                                         
                       fontWeight: FontWeight.w700)),
+              
               Text(data.label,
+                   
                   style: const TextStyle(color: kMuted, fontSize: 11)),
             ],
+            
           ),
+          
         ],
+        
       ),
+      
     );
+    
   }
+  
 }
 
+
 // ─── WORKOUT LIST ────────────────────────────────────────────────────────────
+
 class _WorkoutList extends StatelessWidget {
+  
   final workouts = const [
+    
     _WData("🏃", "Morning Run",    "32 min · 4.2 km",  kOrange, 0.65),
+    
     _WData("🧘", "Yoga Flow",      "45 min · 180 cal", kPurple, 0.40),
+    
     _WData("🚴", "Cycling",        "55 min · 620 cal", kBlue,   0.80),
+    
   ];
+  
   const _WorkoutList();
 
   @override
+  
   Widget build(BuildContext context) {
+    
     return SizedBox(
+      
       height: 130,
+      
       child: ListView.builder(
+        
         scrollDirection: Axis.horizontal,
+        
         padding: const EdgeInsets.symmetric(horizontal: 20),
+        
         itemCount: workouts.length,
+        
         itemBuilder: (_, i) => _WorkoutCard(data: workouts[i]),
+        
       ),
+      
     );
+    
   }
+  
 }
+
 
 class _WData {
   
