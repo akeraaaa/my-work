@@ -773,36 +773,65 @@ class _WorkoutList extends StatelessWidget {
 }
 
 class _WData {
+  
   final String icon, name, meta;
+  
   final Color  color;
+  
   final double progress;
+  
   const _WData(this.icon, this.name, this.meta, this.color, this.progress);
+  
 }
 
 class _WorkoutCard extends StatelessWidget {
+  
   final _WData data;
+  
   const _WorkoutCard({required this.data});
+  
 
   @override
+  
   Widget build(BuildContext context) {
+    
     return Container(
+      
       width: 180,
+      
       margin: const EdgeInsets.only(right: 14),
+      
       padding: const EdgeInsets.all(18),
+      
       decoration: BoxDecoration(
+        
         gradient: LinearGradient(
+          
           colors: [data.color.withOpacity(0.25), kCard],
+          
           begin: Alignment.topLeft, end: Alignment.bottomRight,
+          
         ),
+        
         borderRadius: BorderRadius.circular(22),
+        
         border: Border.all(color: data.color.withOpacity(0.3)),
+        
+        
       ),
+      
       child: Column(
+        
         crossAxisAlignment: CrossAxisAlignment.start,
+        
         children: [
+          
           Row(children: [
+            
             Text(data.icon, style: const TextStyle(fontSize: 24)),
+            
             const Spacer(),
+            
             Icon(Icons.play_circle_filled_rounded,
                 color: data.color, size: 28),
           ]),
