@@ -589,14 +589,24 @@ class _RingsPainter extends CustomPainter {
     
 
     // Center text
+    
     final tp = TextPainter(
+      
       text: const TextSpan(
+        
         text: '🔥',
+        
         style: TextStyle(fontSize: 22),
+        
       ),
+      
       textDirection: TextDirection.ltr,
+
+      
     )..layout();
-    tp.paint(c, center - Offset(tp.width / 2, tp.height / 2));
+    
+    tp.paint(c, center - Offset(tp.width / 2, tp.height / 2)); //extra
+    
   }
 
   @override
