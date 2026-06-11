@@ -622,22 +622,36 @@ class _QuickStats extends StatelessWidget {
   const _QuickStats();
 
   @override
+  
   Widget build(BuildContext context) {
+    
     return GridView.count(
+      
       crossAxisCount: 2,
+      
       shrinkWrap: true,
+      
       physics: const NeverScrollableScrollPhysics(),
+      
       crossAxisSpacing: 12,
+      
       mainAxisSpacing: 12,
+      
       childAspectRatio: 1.6,
+      
       children: stats.map((s) => _StatCard(data: s)).toList(),
+      
     );
+    
   }
+  
 }
 
 class _StatData {
   
+  
   final String icon, label, value, sub;
+  
   
   final Color  color;
   
@@ -648,7 +662,9 @@ class _StatData {
 
 class _StatCard extends StatelessWidget {
   
+  
   final _StatData data;
+  
   const _StatCard({required this.data});
 
   @override
