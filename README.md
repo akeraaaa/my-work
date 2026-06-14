@@ -11,6 +11,8 @@
 
 5.crop recommendation system
 
+6.iot sensor api 
+
 # Date Of Work:
 
 
