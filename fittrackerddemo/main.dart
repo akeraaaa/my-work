@@ -4,16 +4,7 @@ import 'package:flutter/services.dart';
 
 import 'dart:math' as math;
 
-void main() {
-  
-  SystemChrome.setSystemUIOverlayStyle(
-    
-    const SystemUiOverlayStyle(
-      
-      statusBarColor: Colors.transparent,
-      
-      statusBarIconBrightness: Brightness.light,
-      
+
     ),
 
     
