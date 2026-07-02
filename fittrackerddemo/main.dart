@@ -173,7 +173,50 @@ class _HomeScreenState extends State<HomeScreen>
             
             children: [
               
-             
+              _Header(),
+              
+              const SizedBox(height: 24),
+              
+              _SectionPad(child: _RingCard(anim: _ringAnim)),
+              
+              const SizedBox(height: 24),
+              
+              _SectionPad(child: _QuickStats()),
+              
+              const SizedBox(height: 24),
+              
+              _SectionHeader(title: "Today's Workouts", action: "See all"),
+              
+              const SizedBox(height: 12),
+              
+              _WorkoutList(),
+              
+              const SizedBox(height: 24),
+
+              
+              _SectionHeader(title: "Weekly Progress", action: "Details"),
+              
+              const SizedBox(height: 12),
+              
+              _SectionPad(child: _WeeklyChart()),
+              
+              const SizedBox(height: 24),
+              
+              _SectionHeader(title: "Challenges", action: "View all"),
+              
+              const SizedBox(height: 12),
+              
+              _ChallengesRow(),
+              
+              const SizedBox(height: 8),
+              
+            ],
+            
+          ),
+          
+        ),
+        
+      ),
       
       bottomNavigationBar: _BottomNav(
         
