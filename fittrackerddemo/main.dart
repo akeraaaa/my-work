@@ -503,7 +503,182 @@ class _RingLegend extends StatelessWidget {
         
         const Spacer(),
         
-       
+        Text(value, style: TextStyle(color: kText, fontSize: 12,
+                                     
+            fontWeight: FontWeight.w600)),
+        
+      ],
+      
+    );
+    
+  }
+  
+}
+
+class _RingsPainter extends CustomPainter {
+
+
+  
+  final double progress;
+  
+  const _RingsPainter({required this.progress});
+  
+
+  void _ring(Canvas c, Offset center, double r, Color col,
+             
+      double pct, double stroke) {
+    
+    final bg = Paint()
+      
+      ..color = col.withOpacity(0.15)
+      
+      ..strokeWidth = stroke
+      
+      ..style = PaintingStyle.stroke
+      
+      ..strokeCap = StrokeCap.round;
+    
+    final fg = Paint()
+      
+      ..color = col
+      
+      ..strokeWidth = stroke
+      
+      ..style = PaintingStyle.stroke
+      
+      ..strokeCap = StrokeCap.round
+      
+      ..shader = SweepGradient(
+      
+        startAngle: -math.pi / 2,
+      
+        endAngle:   -math.pi / 2 + 2 * math.pi,
+      
+        colors: [col.withOpacity(0.6), col],
+      
+      ).createShader(Rect.fromCircle(center: center, radius: r));
+    
+
+    c.drawCircle(center, r, bg);
+    
+    c.drawArc(
+      
+      Rect.fromCircle(center: center, radius: r),
+      
+      -math.pi / 2,
+      
+      2 * math.pi * pct * progress,
+      
+      false, fg,
+      
+    );
+    
+  }
+
+  @override
+  
+  void paint(Canvas c, Size s) {
+    
+    final center = Offset(s.width / 2, s.height / 2);
+    
+    _ring(c, center, 60, kGreen,  0.80, 12);
+    
+    _ring(c, center, 44, kBlue,   0.57, 12);
+    
+    _ring(c, center, 28, kOrange, 0.71, 12);
+    
+
+    // Center text
+    
+    final tp = TextPainter(
+      
+      text: const TextSpan(
+        
+        text: '🔥',
+        
+        style: TextStyle(fontSize: 22),
+        
+      ),
+      
+      textDirection: TextDirection.ltr,
+
+      
+    )..layout();
+    
+    tp.paint(c, center - Offset(tp.width / 2, tp.height / 2)); //extra
+    
+  }
+
+  @override
+  bool shouldRepaint(_RingsPainter old) => old.progress != progress;
+}
+
+// ─── QUICK STATS ─────────────────────────────────────────────────────────────
+
+class _QuickStats extends StatelessWidget {
+  
+  final stats = const [
+    
+    _StatData("👣", "Steps",    "8,420",  "+12%",  kPurple),
+    
+    _StatData("🔥", "Calories", "480",    "+5%",   kPink),
+    
+    _StatData("💧", "Water",    "1.8L",   "Goal 2L",kBlue),
+    
+    _StatData("😴", "Sleep",    "7h 20m", "Good",  kGreen),
+    
+  ];
+
+  const _QuickStats();
+
+  @override
+  
+  Widget build(BuildContext context) {
+    
+    return GridView.count(
+      
+      crossAxisCount: 2,
+      
+      shrinkWrap: true,
+      
+      physics: const NeverScrollableScrollPhysics(),
+      
+      crossAxisSpacing: 12,
+      
+      mainAxisSpacing: 12,
+      
+      childAspectRatio: 1.6,
+      
+      children: stats.map((s) => _StatCard(data: s)).toList(),
+      
+    );
+    
+  }
+  
+}
+
+class _StatData {
+  
+  
+  final String icon, label, value, sub;
+  
+  
+  final Color  color;
+  
+  const _StatData(this.icon, this.label, this.value, this.sub, this.color);
+  
+}
+
+
+class _StatCard extends StatelessWidget {
+  
+  
+  final _StatData data;
+  
+  const _StatCard({required this.data});
+
+  @override
+  
   Widget build(BuildContext context) {
     
     return Container(
