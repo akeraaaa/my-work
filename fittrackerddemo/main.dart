@@ -137,7 +137,15 @@ class _HomeScreenState extends State<HomeScreen>
   }
   
 
- 
+  @override
+  
+  void dispose() {
+    
+    _ringCtrl.dispose();
+    
+    super.dispose();
+    
+  }
   
 
   @override
