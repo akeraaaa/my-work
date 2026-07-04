@@ -26,57 +26,6 @@ void main() {
 
 // ─── APP ────────────────────────────────────────────────────────────────────
 
-class FitnessApp extends StatelessWidget {
-  
-  const FitnessApp({super.key});
-  
-
-  @override
-  
-  Widget build(BuildContext context) {
-    
-    return MaterialApp(
-      
-      title: 'FitTrack',
-      
-      debugShowCheckedModeBanner: false,
-
-      
-      theme: ThemeData(
-        
-        useMaterial3: true,
-        
-        fontFamily: 'SF Pro Display',
-
-        
-        colorScheme: ColorScheme.fromSeed(
-          
-          seedColor: const Color(0xFF6C63FF),
-          
-          brightness: Brightness.dark,
-          
-        ),
-        scaffoldBackgroundColor: const Color(0xFF0F0F1A),
-        
-      ),
-      
-      home: const HomeScreen(),
-      
-    );
-    
-  }
-  
-}
-
-// ─── COLORS ─────────────────────────────────────────────────────────────────
-
-const kBg        = Color(0xFF0F0F1A);
-
-const kCard      = Color(0xFF1A1A2E);
-
-const kCardLight = Color(0xFF16213E);
-
-const kPurple    = Color(0xFF6C63FF);
 
 
 
