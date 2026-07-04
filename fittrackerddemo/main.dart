@@ -326,7 +326,45 @@ class _Header extends StatelessWidget {
           Container(
 
             
-           
+            width: 44, height: 44,
+            
+            decoration: BoxDecoration(
+              
+              gradient: const LinearGradient(
+                
+                colors: [kPurple, kPink],
+                
+                begin: Alignment.topLeft, end: Alignment.bottomRight,
+                
+              ),
+              
+              borderRadius: BorderRadius.circular(14),
+              
+            ),
+            
+            child: const Center(
+              
+              child: Text('AJ',
+                          
+                  style: TextStyle(color: 
+                                   Colors.white,
+                      fontWeight: FontWeight.w700, fontSize: 15)),
+              
+            ),
+            
+          ),
+          
+        ],
+        
+      ),
+      
+    );
+    
+  }
+  
+}
+
+// ─── RING CARD ───────────────────────────────────────────────────────────────
 
 class _RingCard extends StatelessWidget {
   
