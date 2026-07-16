@@ -9,7 +9,31 @@
     echo "No book available";
   }
  ?>
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore Books</title>
+    <link rel="stylesheet" href="css/explore.css" />
+    <!-- link for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- link for font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&family=Playfair+Display&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigatoin bar -->
+    <?php 
+      include('navigation.php'); 
+      ?>
+    <!-- End of navigation section -->
+    
 
     <div class="container">
       <!-- Serach section -->
