@@ -33,7 +33,32 @@
       include('navigation.php'); 
       ?>
     <!-- End of navigation section -->
-    
+     <!-- Fetching data from database -->
+        <?php 
+          if(isset($_POST['submit'])){
+            $search=$_POST['search'];
+            $query = "select * from books where name like '%$search%' or author like '%$search%'";
+            $result = mysqli_query($con, $query);
+            if($result){
+              if(mysqli_num_rows($result)>0){               
+                while($detail = mysqli_fetch_assoc($result)){ ?>
+                  <div class="book">
+                    <div class="book-img">
+                      <img src="<?php echo './books_image/'.$detail['image'];?>" alt="" />
+                    </div>
+                    <div class="book-content">
+                      <h2><?php echo $detail['name'];?></h2>
+                      <p id="author">
+                        <b>Author : </b
+                        ><?php echo $detail['author'];?>
+                      </p>
+                      <p>
+                        <b>Description:</b>
+                        <?php echo $detail['description'];?>
+                      </p>
+                      <a href="book.php?id=<?php echo $detail['id'] ?>">View item details &#x2192;</a>
+                    </div>
+                  </div>
 
     <div class="container">
       <!-- Serach section -->
