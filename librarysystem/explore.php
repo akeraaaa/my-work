@@ -87,7 +87,51 @@
           }?>
       </div>
       <!-- End of serach section -->
+ <!-- category button section -->
+      <div class="category">
+        <h1 id="items">
+          <span id="head">Browse </span>Through Book Categories Here
+        </h1>
+        <div class="category-button">
+          <button class="active" data-name="all">All</button>
+          <button data-name="Fiction">Fiction</button>
+          <button data-name="Motivational">Motivational</button>
+          <button data-name="Psychological">Psychological</button>
+          <button data-name="Story">Story</button>
+          <button data-name="Text Book">Text book</button>
+        </div>
+      </div>
+      <!-- End of category section -->
 
+      <!-- Books section -->
+      <div class="books">
+        <!-- Fetching data from database -->
+        <?php 
+        while($book = mysqli_fetch_array($res)){
+        ?>
+
+        <div data-name="<?php echo $book['category'];?>" class="book">
+          <div class="book-img">
+            <img src="<?php echo './books_image/'.$book['image'];?>" alt="" />
+          </div>
+          <div class="book-content">
+            <h2><?php echo $book['name'];?></h2>
+            <p id="author">
+              <b>Author : </b
+              ><?php echo $book['author'];?>
+            </p>
+            <p>
+              <b>Description:</b>
+              <?php echo $book['description'];?>
+            </p>
+            <a href="book.php?id=<?php echo $book['id'] ?>">View item details &#x2192;</a>
+          </div>
+        </div>
+        <?php
+        }
+        ?>
+      </div>
+      <!-- End of book section -->
      
 
       <!-- Contact Us section -->
