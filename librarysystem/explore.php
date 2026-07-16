@@ -134,21 +134,4 @@
       <!-- End of book section -->
      
 
-      <!-- Contact Us section -->
-      <div id="contact">
-        <?php 
-         include ('contactUs.php');
-         ?>
-      </div>
-      <!-- End of contact us section -->
-
-      <!-- Footer section -->
-      <div class="footer">
-        <?php
-       include('footer.html');
-       ?></div>
-      <!-- End of footer section -->
-    </div>
-    <script src="js/explore.js"></script>
-  </body>
-</html>
+     
