@@ -1,12 +1,4 @@
-<!-- connecting to server -->
-<?php
- include('server.php');
 
-  // sql query to select all books from database
-  $sql = 'Select * From books';
-  $res = mysqli_query($con, $sql); // $con from server.php
-  if(!$res){
-    echo "No book available";
   }
  ?>
 
